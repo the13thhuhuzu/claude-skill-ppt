@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <rect x="240" y="150" width="640" height="90" rx="18" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><rect x="200" y="270" width="720" height="90" rx="18" fill="#f8fafc" stroke="#0a1f3d" stroke-width="3"/><rect x="240" y="390" width="640" height="90" rx="18" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><rect x="285" y="510" width="550" height="90" rx="18" fill="#f8fafc" stroke="#0a1f3d" stroke-width="3"/><path d="M310 195 H810 M290 315 H830 M310 435 H810 M360 555 H760" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><text x="110" y="642" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" letter-spacing="2" fill="#6f8fae">AGENT SKILL = REUSABLE WORK SYSTEM</text>
+      <rect x="106" y="520" width="155" height="74" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="128" y="556" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">目标</text>
+      <text x="128" y="588" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">做什么</text>
+      <rect x="286" y="520" width="155" height="74" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="308" y="556" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">资料</text>
+      <text x="308" y="588" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">看什么</text>
+      <rect x="466" y="520" width="155" height="74" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="488" y="556" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">手册</text>
+      <text x="488" y="588" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">怎么做</text>
+      <rect x="646" y="520" width="155" height="74" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="668" y="556" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">脚本</text>
+      <text x="668" y="588" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">用什么</text>
+      <rect x="826" y="520" width="155" height="74" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="848" y="556" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">验收</text>
+      <text x="848" y="588" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">好不好</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">Skill Stack</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">目标 / 资料 / 手册 / 脚本 / 输出</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

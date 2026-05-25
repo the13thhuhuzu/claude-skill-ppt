@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <rect x="230" y="155" width="330" height="480" rx="20" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><path d="M305 260 H490 M305 325 H470 M305 390 H505 M305 455 H450" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M610 395 H830 M790 350 L850 395 L790 440" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="835" y="260" width="130" height="270" rx="20" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/>
+  </g>
+  <g class="argument-layer"><rect x="105" y="590" width="230" height="76" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="127" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">复杂文件</text>
+      <text x="127" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">不是一句话</text>
+      <rect x="445" y="590" width="230" height="76" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="467" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">提取结构</text>
+      <text x="467" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">三要点 / 风险</text>
+      <rect x="785" y="590" width="230" height="76" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="807" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">变成行动</text>
+      <text x="807" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">问题 / 下一步</text>
+      <path d="M350 628 H411" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M411 614 L435 628 L411 642" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M690 628 H751" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M751 614 L775 628 L751 642" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">喂一份复杂文件</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">让 AI 提炼结构，而不是泛泛回答</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

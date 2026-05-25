@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <rect x="170" y="130" width="780" height="540" rx="20" fill="#eef3f8" stroke="#0a1f3d" stroke-width="3"/><path d="M260 230 H860 M260 330 H860 M260 430 H860 M260 530 H860 M390 170 V640 M620 170 V640" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="285" cy="230" r="18" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/><circle cx="285" cy="330" r="18" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/><circle cx="285" cy="430" r="18" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/><circle cx="285" cy="530" r="18" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/>
+  </g>
+  <g class="argument-layer"><rect x="105" y="580" width="185" height="70" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="127" y="616" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">角色</text>
+      <text x="127" y="648" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">我是谁</text>
+      <rect x="315" y="580" width="185" height="70" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="337" y="616" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">边界</text>
+      <text x="337" y="648" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">不做什么</text>
+      <rect x="525" y="580" width="185" height="70" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="547" y="616" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">步骤</text>
+      <text x="547" y="648" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">先后顺序</text>
+      <rect x="735" y="580" width="185" height="70" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="757" y="616" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">验收</text>
+      <text x="757" y="648" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">判断标准</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">System Prompt 蓝图</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">角色、边界、步骤、验收标准</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

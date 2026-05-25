@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <rect x="210" y="250" width="700" height="360" rx="18" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><path d="M300 340 H820 M300 405 H780 M300 470 H840 M300 535 H650" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M755 175 L865 285 L600 550 L510 570 L535 480 Z" fill="#f8fafc" stroke="#0a1f3d" stroke-width="4"/><path d="M720 210 L830 320" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><rect x="92" y="600" width="230" height="74" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="114" y="636" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">写角色</text>
+      <text x="114" y="668" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">谁来做</text>
+      <rect x="347" y="600" width="230" height="74" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="369" y="636" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">写步骤</text>
+      <text x="369" y="668" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">怎么做</text>
+      <rect x="602" y="600" width="230" height="74" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="624" y="636" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">写标准</text>
+      <text x="624" y="668" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">好不好</text>
+      <rect x="857" y="600" width="170" height="74" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="879" y="636" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">沉淀</text>
+      <text x="879" y="668" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">可复用</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">第一个 Skill</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">把经验写成可复用的系统提示词</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

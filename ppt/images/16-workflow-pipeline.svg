@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <circle cx="170" cy="395" r="64" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><circle cx="365" cy="395" r="64" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/><circle cx="560" cy="395" r="64" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><circle cx="755" cy="395" r="64" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/><circle cx="950" cy="395" r="64" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><path d="M235 395 H300 M430 395 H495 M625 395 H690 M820 395 H885" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M150 510 H190 M345 510 H385 M540 510 H580 M735 510 H775 M930 510 H970" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><text x="130" y="600" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" letter-spacing="2" fill="#6f8fae">EXECUTION, NOT CONVERSATION</text>
+      <rect x="122" y="625" width="160" height="62" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="144" y="661" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">输入</text>
+      <text x="144" y="693" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">目标</text>
+      <rect x="322" y="625" width="160" height="62" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="344" y="661" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">理解</text>
+      <text x="344" y="693" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">上下文</text>
+      <rect x="522" y="625" width="160" height="62" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="544" y="661" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">执行</text>
+      <text x="544" y="693" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">工具</text>
+      <rect x="722" y="625" width="160" height="62" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="744" y="661" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">校验</text>
+      <text x="744" y="693" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">标准</text>
+      <rect x="922" y="625" width="120" height="62" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="944" y="661" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">交付</text>
+      <text x="944" y="693" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">结果</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">Workflow Pipeline</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">输入 → 理解 → 执行 → 校验 → 交付</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

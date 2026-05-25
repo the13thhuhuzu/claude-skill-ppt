@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <path d="M230 590 C410 420 515 325 650 205 C705 155 780 170 835 225 C710 355 620 455 450 660 C395 728 278 685 230 590 Z" fill="#f8fafc" stroke="#0a1f3d" stroke-width="4"/><path d="M690 205 L835 225 M420 630 L300 725" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="680" y="455" width="270" height="190" rx="18" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><path d="M735 520 H895 M735 565 H870" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><rect x="95" y="560" width="240" height="74" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="117" y="596" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">MCP</text>
+      <text x="117" y="628" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">刀具接口：能触达世界</text>
+      <rect x="440" y="560" width="240" height="74" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="462" y="596" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">Agent Skill</text>
+      <text x="462" y="628" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">菜谱经验：知道怎么做</text>
+      <rect x="785" y="560" width="240" height="74" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="807" y="596" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">复杂业务</text>
+      <text x="807" y="628" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">两者配合才可交付</text>
+      <path d="M350 598 H406" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M406 584 L430 598 L406 612" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M695 598 H751" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M751 584 L775 598 L751 612" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="145" y="672" font-family="Noto Sans SC, sans-serif" font-size="20" font-weight="700" fill="#0a1f3d">光有刀不会做饭；光有菜谱也切不开食材。</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">刀具与菜谱</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">MCP 是手，Skill 是脑</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

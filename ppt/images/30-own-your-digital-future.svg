@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <path d="M405 165 H720 V680 H405 Z" fill="#f8fafc" stroke="#0a1f3d" stroke-width="4"/><path d="M720 165 L865 235 V620 L720 680 Z" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><path d="M760 430 H790" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M865 425 H980 M940 385 L995 425 L940 465" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M245 680 H890" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><rect x="105" y="590" width="250" height="76" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="127" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">陪聊</text>
+      <text x="127" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">随机回答</text>
+      <path d="M370 628 H481" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M481 614 L505 628 L481 642" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="520" y="590" width="250" height="76" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="542" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">系统</text>
+      <text x="542" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">稳定执行</text>
+      <path d="M785 628 H896" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M896 614 L920 628 L896 642" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="935" y="590" width="130" height="76" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="957" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">掌控</text>
+      <text x="957" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">未来</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">数字未来</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">掌控属于你的执行系统</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

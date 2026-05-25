@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <rect x="260" y="115" width="360" height="650" rx="54" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><path d="M350 190 H535 M340 255 H545 M340 300 H560 M340 345 H525 M340 390 H565 M340 435 H515 M340 480 H550 M340 525 H530 M340 570 H560" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="735" cy="485" r="112" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/><path d="M735 405 V505 M735 570 V575" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><rect x="92" y="590" width="240" height="82" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="114" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">热闹对话</text>
+      <text x="114" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">越聊越散</text>
+      <rect x="440" y="590" width="250" height="82" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="462" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">缺失现场</text>
+      <text x="462" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">目标 / 资料 / 标准</text>
+      <rect x="798" y="590" width="230" height="82" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="820" y="626" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">结果漂移</text>
+      <text x="820" y="658" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">像开盲盒</text>
+      <path d="M345 631 H408" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M408 617 L432 631 L408 645" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M705 631 H766" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M766 617 L790 631 L766 645" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">陪聊陷阱</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">热闹对话不等于完成工作</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

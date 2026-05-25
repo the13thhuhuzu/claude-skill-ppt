@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从陪聊到专属数字员工 · Blueprint</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap');
+:root{--paper:#F0EAE0;--ink:#1a1a1a;--ink2:#555;--muted:#8b857c;--rust:#B5392A;--rust-soft:rgba(181,57,42,.08);--line:#cec8be;--white:#fffaf2}
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:var(--paper);color:var(--ink);font-family:Inter,'Noto Sans SC',system-ui,sans-serif}.deck{position:fixed;inset:0;display:flex;width:1800vw;height:100vh;transition:transform .65s cubic-bezier(.77,0,.175,1)}.slide{position:relative;flex:0 0 100vw;width:100vw;height:100vh;padding:64px 80px;overflow:hidden;background:var(--paper)}.kb-grid-bg{position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:linear-gradient(rgba(26,26,26,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(26,26,26,.055) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at center,black 42%,transparent 88%)}.slide>*{position:relative;z-index:2}.kb-top{position:absolute;top:24px;left:80px;right:80px;display:flex;justify-content:space-between;font:700 12px/1 JetBrains Mono,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.kb-footer{position:absolute;left:80px;right:80px;bottom:32px;display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px;font:700 11px/1 JetBrains Mono,monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.kb-layout{height:100%;display:grid;grid-template-columns:46fr 54fr;gap:40px;align-items:center;padding:26px 0 44px}.kb-text{display:flex;flex-direction:column;gap:22px}.kb-kicker{font:900 13px/1 JetBrains Mono,monospace;letter-spacing:.25em;text-transform:uppercase;color:var(--rust)}.kb-h1{font-size:clamp(56px,5.6vw,88px);font-weight:900;line-height:1.02;letter-spacing:-.035em;margin:0}.line{display:block;text-wrap:balance}.rust{color:var(--rust)}.kb-sub{font-size:clamp(22px,1.65vw,28px);line-height:1.42;color:var(--ink2);margin:0;max-width:28ch}.kb-sub span{display:block}.kb-insight{display:block;background:var(--rust);color:white;border-radius:10px;padding:18px 22px;font-size:20px;font-weight:800;line-height:1.45;max-width:430px}.kb-insight span{display:block;font:900 11px/1 JetBrains Mono,monospace;letter-spacing:.18em;text-transform:uppercase;opacity:.72;margin-bottom:9px}.kb-insight b{display:block;font:inherit}.kb-diagram{width:100%;max-height:72vh}.kb-diagram rect,.kb-diagram .paper{fill:#fffaf2;stroke:var(--ink);stroke-width:4}.kb-diagram .thin rect{fill:#fffaf2}.kb-diagram .hero rect{fill:var(--rust);stroke:var(--rust)}.kb-diagram .box-title{font-size:28px;font-weight:900;fill:var(--ink)}.kb-diagram .box-desc{font-size:20px;font-weight:800;fill:var(--ink2)}.kb-diagram .hero .box-title,.kb-diagram .hero .box-desc{fill:#fff}.arrow{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.rust-stroke{stroke:var(--rust)!important}.dash{fill:none;stroke:var(--line);stroke-width:4;stroke-dasharray:8 8}.loop,.ring{fill:none;stroke:var(--rust);stroke-width:5}.island{fill:rgba(181,57,42,.06);stroke:var(--rust);stroke-width:4;stroke-dasharray:10 8}.small-label{font-size:22px;font-weight:900;fill:var(--ink2)}.diagram-note{font-size:26px;font-weight:900;fill:var(--ink)}.diagram-note.light{fill:#fff}.form-title{font-size:34px;font-weight:900;fill:var(--ink)}.chart{fill:#fffaf2;stroke:var(--ink);stroke-width:4}.bar{fill:#d9d1c5;stroke:var(--ink);stroke-width:3}.rust-fill{fill:var(--rust)!important}.door{fill:#fffaf2;stroke:var(--ink);stroke-width:5}.nav{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:10;display:flex;gap:8px}.nav button{width:8px;height:8px;border-radius:50%;border:0;background:#b8b0a5;padding:0}.nav button.active{width:24px;border-radius:999px;background:var(--rust)}.hint{position:fixed;right:28px;bottom:11px;z-index:10;font:700 10px/1 JetBrains Mono,monospace;color:var(--muted);letter-spacing:.16em;text-transform:uppercase}@media(max-width:900px){.slide{padding:52px 44px}.kb-layout{grid-template-columns:1fr;gap:14px}.kb-sub{max-width:100%}.kb-diagram{max-height:48vh}.kb-footer,.kb-top{left:44px;right:44px}.kb-h1{font-size:52px}}
+</style>
+</head>
+<body>
+<main id="deck" class="deck">
+<section class="slide" data-id="cover">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>封面</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>01 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">封面</div>
+      <h1 class="kb-h1"><span class="line">从陪聊到</span><span class="line rust">专属数字员工</span></h1>
+      <p class="kb-sub"><span>给初学者的一张</span><span>个人 AI 工作系统蓝图。</span><span>少一点术语，</span><span>多一点可执行的结构。</span></p>
+      <div class="kb-insight"><span>KEY INSIGHT</span><b>先别追求万能提示词，</b><b>先搭一个能工作的系统。</b></div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="70" y="88" width="230" height="112" rx="14"></rect>
+    <text class="box-title" x="92" y="124">聊天框</text>
+    <text class="box-desc" x="92" y="154">临时问答 / 上下文散</text>
+  </g>
+    
+  <path class="arrow " d="M318 144 H423"></path>
+  <path class="arrow " d="M423 131 L445 144 L423 157"></path>
+    
+  <g class="thin">
+    <rect x="462" y="54" width="230" height="78" rx="14"></rect>
+    <text class="box-title" x="484" y="90">目标</text>
+    <text class="box-desc" x="484" y="120">做什么</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="462" y="154" width="230" height="78" rx="14"></rect>
+    <text class="box-title" x="484" y="190">资料</text>
+    <text class="box-desc" x="484" y="220">看什么</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="462" y="254" width="230" height="78" rx="14"></rect>
+    <text class="box-title" x="484" y="290">工具</text>
+    <text class="box-desc" x="484" y="320">用什么</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="462" y="354" width="230" height="78" rx="14"></rect>
+    <text class="box-title" x="484" y="390">标准</text>
+    <text class="box-desc" x="484" y="420">好不好</text>
+  </g>
+    
+  <path class="arrow rust-stroke" d="M705 242 H783"></path>
+  <path class="arrow rust-stroke" d="M783 229 L805 242 L783 255"></path>
+    
+  <g class="hero">
+    <rect x="820" y="132" width="240" height="220" rx="14"></rect>
+    <text class="box-title" x="842" y="168">专属数字员工</text>
+    <text class="box-desc" x="842" y="198">可执行 / 可复用 / 可验收</text>
+  </g>
+    <path class="loop rust-stroke" d="M930 366 C1030 430 1010 500 876 486 C740 472 740 402 820 372"></path>
+    <text class="small-label" x="792" y="512">反馈回路：越用越稳</text>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="problem">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>为什么 AI 看起来很笨</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>02 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">为什么 AI 看起来很笨</div>
+      <h1 class="kb-h1"><span class="line">不是模型笨，</span><span class="line rust">是条件没给够</span></h1>
+      <p class="kb-sub"><span>AI 要完成工作，</span><span>至少需要目标、资料、</span><span>工具和验收标准。</span><span>只有聊天框，它只能猜。</span></p>
+      <div class="kb-insight"><span>KEY INSIGHT</span><b>把 AI 当新人看：</b><b>没有岗位、资料和工具，</b><b>新人也会乱做。</b></div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="70" y="170" width="260" height="190" rx="14"></rect>
+    <text class="box-title" x="92" y="206">一句话提问</text>
+    <text class="box-desc" x="92" y="236">“帮我写一下”</text>
+  </g>
+    <circle class="island" cx="200" cy="265" r="118"></circle>
+    <text class="small-label" x="124" y="408">孤岛：只有聊天，没有现场</text>
+    
+  <path class="arrow " d="M360 265 H453"></path>
+  <path class="arrow " d="M453 252 L475 265 L453 278"></path>
+    
+  <g class="thin">
+    <rect x="520" y="70" width="190" height="90" rx="14"></rect>
+    <text class="box-title" x="542" y="106">目标</text>
+    <text class="box-desc" x="542" y="136">要达成什么</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="760" y="70" width="190" height="90" rx="14"></rect>
+    <text class="box-title" x="782" y="106">资料</text>
+    <text class="box-desc" x="782" y="136">事实在哪里</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="520" y="300" width="190" height="90" rx="14"></rect>
+    <text class="box-title" x="542" y="336">工具</text>
+    <text class="box-desc" x="542" y="366">能不能执行</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="760" y="300" width="190" height="90" rx="14"></rect>
+    <text class="box-title" x="782" y="336">标准</text>
+    <text class="box-desc" x="782" y="366">怎么验收</text>
+  </g>
+    <path class="dash" d="M615 160 V300 M855 160 V300 M710 115 H760 M710 345 H760"></path>
+    
+  <g class="hero">
+    <rect x="612" y="202" width="246" height="78" rx="14"></rect>
+    <text class="box-title" x="634" y="238">缺失条件</text>
+    <text class="box-desc" x="634" y="268">不是模型笨，是配置少</text>
+  </g>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="shift">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>旧模式 vs 新模式</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>03 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">旧模式 vs 新模式</div>
+      <h1 class="kb-h1"><span class="line">从一句话提问，</span><span class="line rust">到一套工作流</span></h1>
+      <p class="kb-sub">新手最关键的转变：不是学习更玄的问法，而是把工作条件组织起来。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>Prompt 只是入口，工作流才是交付系统。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="84" y="82" width="390" height="350" rx="14"></rect>
+    <text class="box-title" x="106" y="118">旧模式：陪聊</text>
+    <text class="box-desc" x="106" y="148">一句话 → 追问 → 复制粘贴 → 人工兜底</text>
+  </g>
+    <text class="diagram-note" x="122" y="210">输出质量：靠运气</text>
+    <text class="diagram-note" x="122" y="260">上下文：散在聊天里</text>
+    <text class="diagram-note" x="122" y="310">复用方式：重新来过</text>
+    
+  <path class="arrow rust-stroke" d="M500 258 H598"></path>
+  <path class="arrow rust-stroke" d="M598 245 L620 258 L598 271"></path>
+    
+  <g class="hero">
+    <rect x="650" y="82" width="390" height="350" rx="14"></rect>
+    <text class="box-title" x="672" y="118">新模式：工作流</text>
+    <text class="box-desc" x="672" y="148">目标 + 资料 + 工具 + 验收</text>
+  </g>
+    <text class="diagram-note light" x="688" y="210">输出质量：可预期</text>
+    <text class="diagram-note light" x="688" y="260">上下文：沉淀成资产</text>
+    <text class="diagram-note light" x="688" y="310">复用方式：调用 Skill</text>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="employee">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>什么是专属数字员工</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>04 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">什么是专属数字员工</div>
+      <h1 class="kb-h1"><span class="line">数字员工，</span><span class="line rust">先有岗位说明书</span></h1>
+      <p class="kb-sub">它不是一个更会聊天的 AI，而是一个被安排了角色、范围、材料、格式和标准的执行者。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>说明书越清楚，交付越稳定。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    <rect class="paper" x="220" y="38" width="680" height="470" rx="18"></rect>
+    <text class="form-title" x="270" y="104">数字员工岗位说明书</text>
+    
+  <g class="thin">
+    <rect x="270" y="145" width="260" height="92" rx="14"></rect>
+    <text class="box-title" x="292" y="181">角色</text>
+    <text class="box-desc" x="292" y="211">它是谁 / 负责什么</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="590" y="145" width="260" height="92" rx="14"></rect>
+    <text class="box-title" x="612" y="181">工作范围</text>
+    <text class="box-desc" x="612" y="211">做什么 / 不做什么</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="270" y="270" width="260" height="92" rx="14"></rect>
+    <text class="box-title" x="292" y="306">输入材料</text>
+    <text class="box-desc" x="292" y="336">看哪些资料</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="590" y="270" width="260" height="92" rx="14"></rect>
+    <text class="box-title" x="612" y="306">输出格式</text>
+    <text class="box-desc" x="612" y="336">交付成什么</text>
+  </g>
+    
+  <g class="hero">
+    <rect x="270" y="395" width="580" height="80" rx="14"></rect>
+    <text class="box-title" x="292" y="431">验收标准</text>
+    <text class="box-desc" x="292" y="461">判断结果是否能直接使用</text>
+  </g>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="stack">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>Agent Skill 总架构</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>05 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">Agent Skill 总架构</div>
+      <h1 class="kb-h1"><span class="line">Agent Skill</span><span class="line rust">是一套五层系统</span></h1>
+      <p class="kb-sub">把经验封装成可复用资产：从目标开始，到验收结束。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>这张图是全篇主地图，后面每页都在展开其中一层。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="230" y="56" width="660" height="72" rx="14"></rect>
+    <text class="box-title" x="252" y="92">目标层</text>
+    <text class="box-desc" x="252" y="122">本次要达成什么</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="200" y="148" width="720" height="72" rx="14"></rect>
+    <text class="box-title" x="222" y="184">资料层</text>
+    <text class="box-desc" x="222" y="214">PDF / 旧稿 / 案例 / 手册</text>
+  </g>
+    
+  <g class="hero">
+    <rect x="170" y="240" width="780" height="72" rx="14"></rect>
+    <text class="box-title" x="192" y="276">流程层</text>
+    <text class="box-desc" x="192" y="306">先读 → 再拆 → 执行 → 自检</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="200" y="332" width="720" height="72" rx="14"></rect>
+    <text class="box-title" x="222" y="368">工具层</text>
+    <text class="box-desc" x="222" y="398">脚本 / 网页 / 文件 / 本地软件</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="230" y="424" width="660" height="72" rx="14"></rect>
+    <text class="box-title" x="252" y="460">验收层</text>
+    <text class="box-desc" x="252" y="490">格式 / 质量 / 禁区 / 失败处理</text>
+  </g>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="prompt">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>System Prompt</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>06 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">System Prompt</div>
+      <h1 class="kb-h1"><span class="line">System Prompt</span><span class="line rust">不是话术，是说明书</span></h1>
+      <p class="kb-sub">对新手来说，只要先写清四件事：你是谁、做什么、怎么做、什么算好。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>把脑内经验写成制度，AI 才能反复调用。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    <rect class="paper" x="160" y="60" width="800" height="420" rx="18"></rect>
+    <path class="dash" d="M560 90 V450 M190 270 H930"></path>
+    
+  <g class="thin">
+    <rect x="205" y="110" width="300" height="112" rx="14"></rect>
+    <text class="box-title" x="227" y="146">你是谁</text>
+    <text class="box-desc" x="227" y="176">角色与专业视角</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="615" y="110" width="300" height="112" rx="14"></rect>
+    <text class="box-title" x="637" y="146">做什么</text>
+    <text class="box-desc" x="637" y="176">任务边界</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="205" y="320" width="300" height="112" rx="14"></rect>
+    <text class="box-title" x="227" y="356">怎么做</text>
+    <text class="box-desc" x="227" y="386">步骤与顺序</text>
+  </g>
+    
+  <g class="hero">
+    <rect x="615" y="320" width="300" height="112" rx="14"></rect>
+    <text class="box-title" x="637" y="356">什么算好</text>
+    <text class="box-desc" x="637" y="386">输出与验收</text>
+  </g>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="references">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>References</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>07 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">References</div>
+      <h1 class="kb-h1"><span class="line">给 AI 资料，</span><span class="line rust">它才少幻觉</span></h1>
+      <p class="kb-sub">References 是证据中心。它让 AI 先查事实，再开始判断。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>少幻觉不是靠提醒“别编”，而是把证据放到它手边。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="hero">
+    <rect x="460" y="210" width="220" height="100" rx="14"></rect>
+    <text class="box-title" x="482" y="246">References</text>
+    <text class="box-desc" x="482" y="276">证据中心</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="86" y="72" width="190" height="82" rx="14"></rect>
+    <text class="box-title" x="108" y="108">PDF</text>
+    <text class="box-desc" x="108" y="138">长文档</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="842" y="72" width="190" height="82" rx="14"></rect>
+    <text class="box-title" x="864" y="108">旧稿</text>
+    <text class="box-desc" x="864" y="138">历史写法</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="86" y="386" width="190" height="82" rx="14"></rect>
+    <text class="box-title" x="108" y="422">案例</text>
+    <text class="box-desc" x="108" y="452">真实样本</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="842" y="386" width="190" height="82" rx="14"></rect>
+    <text class="box-title" x="864" y="422">手册</text>
+    <text class="box-desc" x="864" y="452">内部规则</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="462" y="420" width="216" height="72" rx="14"></rect>
+    <text class="box-title" x="484" y="456">客户材料</text>
+    <text class="box-desc" x="484" y="486">当下语境</text>
+  </g>
+    <path class="dash" d="M276 113 L460 235 M842 113 L680 235 M276 426 L460 284 M842 426 L680 284 M570 420 V310"></path>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="tools">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>Scripts / Tools</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>08 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">Scripts / Tools</div>
+      <h1 class="kb-h1"><span class="line">给 AI 工具，</span><span class="line rust">它才能执行</span></h1>
+      <p class="kb-sub"><span>读文件、跑脚本、</span><span>查网页、生成文档、</span><span>操作软件。</span><span>这些能力把 AI 推出聊天框。</span></p>
+      <div class="kb-insight"><span>KEY INSIGHT</span><b>从建议到交付，</b><b>中间差的是工具连接。</b></div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="86" y="86" width="210" height="108" rx="14"></rect>
+    <text class="box-title" x="108" y="122">读文件</text>
+    <text class="box-desc" x="108" y="152">PDF / DOCX</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="330" y="86" width="210" height="108" rx="14"></rect>
+    <text class="box-title" x="352" y="122">跑脚本</text>
+    <text class="box-desc" x="352" y="152">Python / Shell</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="574" y="86" width="210" height="108" rx="14"></rect>
+    <text class="box-title" x="596" y="122">查网页</text>
+    <text class="box-desc" x="596" y="152">搜索 / 比较</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="818" y="86" width="210" height="108" rx="14"></rect>
+    <text class="box-title" x="840" y="122">生成文档</text>
+    <text class="box-desc" x="840" y="152">报告 / 表格</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="208" y="314" width="280" height="110" rx="14"></rect>
+    <text class="box-title" x="230" y="350">操作本地软件</text>
+    <text class="box-desc" x="230" y="380">让 AI 进入真实工作区</text>
+  </g>
+    
+  <g class="hero">
+    <rect x="632" y="314" width="280" height="110" rx="14"></rect>
+    <text class="box-title" x="654" y="350">交付成品</text>
+    <text class="box-desc" x="654" y="380">不是建议，而是文件</text>
+  </g>
+    
+  <path class="arrow rust-stroke" d="M488 370 H603"></path>
+  <path class="arrow rust-stroke" d="M603 357 L625 370 L603 383"></path>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="mcp">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>MCP 与 Agent Skill</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>09 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">MCP 与 Agent Skill</div>
+      <h1 class="kb-h1"><span class="line">MCP 是手，</span><span class="line rust">Skill 是脑</span></h1>
+      <p class="kb-sub">MCP 提供工具接口；Agent Skill 负责判断策略。一个让 AI 能做，一个让 AI 知道怎么做。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>刀具 + 菜谱，才像一个真正能做饭的助手。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="170" y="310" width="780" height="115" rx="14"></rect>
+    <text class="box-title" x="192" y="346">MCP：手 / 工具接口</text>
+    <text class="box-desc" x="192" y="376">读写文件、联网搜索、调用接口、操作软件</text>
+  </g>
+    
+  <g class="hero">
+    <rect x="170" y="120" width="780" height="115" rx="14"></rect>
+    <text class="box-title" x="192" y="156">Agent Skill：脑 / 判断策略</text>
+    <text class="box-desc" x="192" y="186">知道遇到什么任务、用什么工具、按什么标准交付</text>
+  </g>
+    <path class="arrow rust-stroke" d="M560 298 V260"></path>
+    <path class="arrow rust-stroke" d="M546 274 L560 248 L574 274"></path>
+    <text class="small-label" x="362" y="486">刀具让 AI 能触达世界；菜谱让 AI 知道怎么做。</text>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="pipeline">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>执行流程</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>10 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">执行流程</div>
+      <h1 class="kb-h1"><span class="line">AI 工作，</span><span class="line rust">不是聊天，是流程</span></h1>
+      <p class="kb-sub"><span>把交付拆成五步：</span><span>输入目标、读取资料、</span><span>调用工具、生成结果，</span><span>最后自检交付。</span></p>
+      <div class="kb-insight"><span>KEY INSIGHT</span><b>流程清楚，</b><b>新手才知道下一步</b><b>该怎么让 AI 做。</b></div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="50" y="210" width="176" height="120" rx="14"></rect>
+    <text class="box-title" x="72" y="246">输入目标</text>
+    <text class="box-desc" x="72" y="276">明确交付物</text>
+  </g>
+    
+  <path class="arrow " d="M236 270 H270"></path>
+  <path class="arrow " d="M270 257 L292 270 L270 283"></path>
+    
+  <g class="thin">
+    <rect x="300" y="210" width="176" height="120" rx="14"></rect>
+    <text class="box-title" x="322" y="246">读取资料</text>
+    <text class="box-desc" x="322" y="276">先看上下文</text>
+  </g>
+    
+  <path class="arrow " d="M486 270 H520"></path>
+  <path class="arrow " d="M520 257 L542 270 L520 283"></path>
+    
+  <g class="hero">
+    <rect x="550" y="184" width="190" height="172" rx="14"></rect>
+    <text class="box-title" x="572" y="220">调用工具</text>
+    <text class="box-desc" x="572" y="250">执行动作</text>
+  </g>
+    
+  <path class="arrow rust-stroke" d="M750 270 H784"></path>
+  <path class="arrow rust-stroke" d="M784 257 L806 270 L784 283"></path>
+    
+  <g class="thin">
+    <rect x="814" y="210" width="176" height="120" rx="14"></rect>
+    <text class="box-title" x="836" y="246">生成结果</text>
+    <text class="box-desc" x="836" y="276">按模板输出</text>
+  </g>
+    
+  <path class="arrow " d="M1000 270 H1038"></path>
+  <path class="arrow " d="M1038 257 L1060 270 L1038 283"></path>
+    <text class="small-label" x="828" y="414">最后一步：自检交付</text>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="feedback">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>反馈闭环</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>11 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">反馈闭环</div>
+      <h1 class="kb-h1"><span class="line">Skill 不是写完，</span><span class="line rust">而是越用越稳</span></h1>
+      <p class="kb-sub">每次人工反馈，都应该回到 Skill 里，变成下一次自动遵守的标准。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span><b>好用的 Skill 来自迭代，</b><b>不来自一次性灵感。</b></div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    <circle class="ring" cx="560" cy="270" r="180"></circle>
+    
+  <g class="thin">
+    <rect x="470" y="58" width="180" height="76" rx="14"></rect>
+    <text class="box-title" x="492" y="94">草稿</text>
+    <text class="box-desc" x="492" y="124">先产出</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="750" y="230" width="180" height="76" rx="14"></rect>
+    <text class="box-title" x="772" y="266">人类反馈</text>
+    <text class="box-desc" x="772" y="296">指出偏差</text>
+  </g>
+    
+  <g class="hero">
+    <rect x="470" y="405" width="180" height="76" rx="14"></rect>
+    <text class="box-title" x="492" y="441">更新 Skill</text>
+    <text class="box-desc" x="492" y="471">沉淀规则</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="190" y="230" width="180" height="76" rx="14"></rect>
+    <text class="box-title" x="212" y="266">下次复用</text>
+    <text class="box-desc" x="212" y="296">更稳定</text>
+  </g>
+    <path class="arrow rust-stroke" d="M630 128 C760 150 834 182 840 230"></path>
+    <path class="arrow rust-stroke" d="M840 306 C820 390 720 438 650 438"></path>
+    <path class="arrow rust-stroke" d="M470 438 C340 420 266 360 278 306"></path>
+    <path class="arrow rust-stroke" d="M278 230 C300 150 392 118 470 96"></path>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="weekly">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>案例：写周报</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>12 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">案例：写周报</div>
+      <h1 class="kb-h1"><span class="line">案例一：</span><span class="line rust">写周报 Skill</span></h1>
+      <p class="kb-sub"><span>把熟悉的工作先系统化：</span><span>输入本周事项、数据和目标，</span><span>输出 STAR 结构周报。</span></p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>先从你最常重复的工作开始。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="78" y="128" width="260" height="112" rx="14"></rect>
+    <text class="box-title" x="100" y="164">输入</text>
+    <text class="box-desc" x="100" y="194">本周事项 / 数据 / 目标</text>
+  </g>
+    
+  <path class="arrow " d="M356 184 H448"></path>
+  <path class="arrow " d="M448 171 L470 184 L448 197"></path>
+    
+  <g class="hero">
+    <rect x="486" y="100" width="250" height="170" rx="14"></rect>
+    <text class="box-title" x="508" y="136">周报 Skill</text>
+    <text class="box-desc" x="508" y="166">按 STAR 结构组织</text>
+  </g>
+    
+  <path class="arrow rust-stroke" d="M752 184 H850"></path>
+  <path class="arrow rust-stroke" d="M850 171 L872 184 L850 197"></path>
+    
+  <g class="thin">
+    <rect x="888" y="128" width="170" height="112" rx="14"></rect>
+    <text class="box-title" x="910" y="164">输出</text>
+    <text class="box-desc" x="910" y="194">可提交周报</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="200" y="360" width="720" height="92" rx="14"></rect>
+    <text class="box-title" x="222" y="396">验收</text>
+    <text class="box-desc" x="222" y="426">是否有结果、有数据、有风险、有下周动作</text>
+  </g>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="pdf">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>案例：读长篇 PDF</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>13 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">案例：读长篇 PDF</div>
+      <h1 class="kb-h1"><span class="line">案例二：</span><span class="line rust">读长篇 PDF</span></h1>
+      <p class="kb-sub">不要让 AI 泛泛总结。让它先拆结构，再给三要点、风险和下一步问题。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>喂文件的目的，是把阅读变成行动。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="70" y="166" width="220" height="170" rx="14"></rect>
+    <text class="box-title" x="92" y="202">长篇 PDF</text>
+    <text class="box-desc" x="92" y="232">几十页材料</text>
+  </g>
+    
+  <path class="arrow " d="M310 252 H413"></path>
+  <path class="arrow " d="M413 239 L435 252 L413 265"></path>
+    
+  <g class="hero">
+    <rect x="455" y="126" width="240" height="250" rx="14"></rect>
+    <text class="box-title" x="477" y="162">解析管线</text>
+    <text class="box-desc" x="477" y="192">先拆结构，再给结论</text>
+  </g>
+    
+  <path class="arrow rust-stroke" d="M718 252 H816"></path>
+  <path class="arrow rust-stroke" d="M816 239 L838 252 L816 265"></path>
+    
+  <g class="thin">
+    <rect x="850" y="78" width="200" height="82" rx="14"></rect>
+    <text class="box-title" x="872" y="114">三要点</text>
+    <text class="box-desc" x="872" y="144">记住重点</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="850" y="190" width="200" height="82" rx="14"></rect>
+    <text class="box-title" x="872" y="226">风险</text>
+    <text class="box-desc" x="872" y="256">提前避坑</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="850" y="302" width="200" height="82" rx="14"></rect>
+    <text class="box-title" x="872" y="338">下一步</text>
+    <text class="box-desc" x="872" y="368">变成行动</text>
+  </g>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="data">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>案例：数据分析</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>14 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">案例：数据分析</div>
+      <h1 class="kb-h1"><span class="line">案例三：</span><span class="line rust">从数据到结论</span></h1>
+      <p class="kb-sub">不需要讲复杂代码，只要让新手理解：CSV 可以进入脚本，脚本可以产生图表和结论。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>工具调用让 AI 从“建议者”变成“执行者”。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="thin">
+    <rect x="60" y="215" width="180" height="100" rx="14"></rect>
+    <text class="box-title" x="82" y="251">CSV</text>
+    <text class="box-desc" x="82" y="281">原始数据</text>
+  </g>
+    
+  <path class="arrow " d="M254 266 H332"></path>
+  <path class="arrow " d="M332 253 L354 266 L332 279"></path>
+    
+  <g class="hero">
+    <rect x="370" y="180" width="220" height="170" rx="14"></rect>
+    <text class="box-title" x="392" y="216">分析 Skill</text>
+    <text class="box-desc" x="392" y="246">清洗 / 统计 / 对比</text>
+  </g>
+    
+  <path class="arrow rust-stroke" d="M604 266 H682"></path>
+  <path class="arrow rust-stroke" d="M682 253 L704 266 L682 279"></path>
+    <rect class="chart" x="732" y="150" width="300" height="230" rx="14"></rect>
+    <rect class="bar" x="780" y="300" width="42" height="54"></rect>
+    <rect class="bar rust-fill" x="852" y="236" width="42" height="118"></rect>
+    <rect class="bar" x="924" y="190" width="42" height="164"></rect>
+    <text class="box-title" x="770" y="116">图表 + 结论</text>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="workspace">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>个人 Agent 工作台</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>15 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">个人 Agent 工作台</div>
+      <h1 class="kb-h1"><span class="line">最后，</span><span class="line rust">搭一个工作台</span></h1>
+      <p class="kb-sub">把任务池、资料库、Skill 库和验收清单放在同一个工作系统里。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>这不是收藏工具，而是搭建自己的工作操作台。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    <rect class="paper" x="160" y="64" width="800" height="420" rx="18"></rect>
+    <path class="dash" d="M560 84 V464 M180 274 H940"></path>
+    
+  <g class="thin">
+    <rect x="210" y="120" width="300" height="112" rx="14"></rect>
+    <text class="box-title" x="232" y="156">任务池</text>
+    <text class="box-desc" x="232" y="186">重复工作先放进来</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="610" y="120" width="300" height="112" rx="14"></rect>
+    <text class="box-title" x="632" y="156">资料库</text>
+    <text class="box-desc" x="632" y="186">旧稿 / 案例 / 文件</text>
+  </g>
+    
+  <g class="hero">
+    <rect x="210" y="318" width="300" height="112" rx="14"></rect>
+    <text class="box-title" x="232" y="354">Skill 库</text>
+    <text class="box-desc" x="232" y="384">可复用流程</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="610" y="318" width="300" height="112" rx="14"></rect>
+    <text class="box-title" x="632" y="354">验收清单</text>
+    <text class="box-desc" x="632" y="384">让结果不漂移</text>
+  </g>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="mvp">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>新手最小版本</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>16 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">新手最小版本</div>
+      <h1 class="kb-h1"><span class="line">新手先做</span><span class="line rust">最小可行版本</span></h1>
+      <p class="kb-sub">别一开始追求全自动。先做 1 个 Prompt、3 份资料、1 个模板、5 条检查项。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>小系统先跑起来，再慢慢加工具。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="hero">
+    <rect x="80" y="100" width="220" height="120" rx="14"></rect>
+    <text class="box-title" x="102" y="136">1 个 Prompt</text>
+    <text class="box-desc" x="102" y="166">岗位说明书</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="335" y="100" width="220" height="120" rx="14"></rect>
+    <text class="box-title" x="357" y="136">3 份资料</text>
+    <text class="box-desc" x="357" y="166">参考样本</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="590" y="100" width="220" height="120" rx="14"></rect>
+    <text class="box-title" x="612" y="136">1 个模板</text>
+    <text class="box-desc" x="612" y="166">输出格式</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="845" y="100" width="220" height="120" rx="14"></rect>
+    <text class="box-title" x="867" y="136">5 条检查项</text>
+    <text class="box-desc" x="867" y="166">验收标准</text>
+  </g>
+    <path class="dash" d="M190 220 V410 H955 V220"></path>
+    <text class="form-title" x="260" y="470">先做最小系统，不要一开始追求自动化全家桶。</text>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="tonight">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>今晚两件事</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>17 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">今晚两件事</div>
+      <h1 class="kb-h1"><span class="line">今晚就做</span><span class="line rust">两件事</span></h1>
+      <p class="kb-sub">写下第一个 System Prompt；再喂一份明天要看的复杂文件。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>行动越小，越容易真正开始。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    
+  <g class="hero">
+    <rect x="120" y="130" width="360" height="260" rx="14"></rect>
+    <text class="box-title" x="142" y="166">01</text>
+    <text class="box-desc" x="142" y="196">写下第一个 System Prompt</text>
+  </g>
+    <text class="diagram-note light" x="165" y="280">角色 / 步骤 / 标准</text>
+    
+  <g class="thin">
+    <rect x="640" y="130" width="360" height="260" rx="14"></rect>
+    <text class="box-title" x="662" y="166">02</text>
+    <text class="box-desc" x="662" y="196">喂一份复杂文件</text>
+  </g>
+    <text class="diagram-note" x="685" y="280">三要点 / 风险 / 下一步</text>
+    
+  <path class="arrow rust-stroke" d="M500 260 H603"></path>
+  <path class="arrow rust-stroke" d="M603 247 L625 260 L603 273"></path>
+  </svg></div>
+  </div>
+</section>
+<section class="slide" data-id="closing">
+  
+  <div class="kb-grid-bg"></div>
+  <div class="kb-top"><span>Agent Skill Blueprint</span><span>结尾</span></div>
+  <div class="kb-footer"><span>Beginner friendly · large type · visual first</span><span>18 / 18</span></div>
+  <div class="kb-layout">
+    <div class="kb-text">
+      <div class="kb-kicker">结尾</div>
+      <h1 class="kb-h1"><span class="line">告别陪聊，</span><span class="line rust">掌控数字未来</span></h1>
+      <p class="kb-sub">不是等更聪明的模型，而是把你的经验、资料、工具和标准组织起来。</p>
+      <div class="kb-insight"><span>KEY INSIGHT</span>从今天开始，拥有你的专属数字员工。</div>
+    </div>
+    <div><svg class="kb-diagram " viewBox="0 0 1120 560" role="img" aria-hidden="true">
+    <path class="door" d="M360 105 H560 V470 H360 Z"></path>
+    <path class="door rust-fill" d="M560 105 L735 170 V420 L560 470 Z"></path>
+    
+  <path class="arrow rust-stroke" d="M740 292 H948"></path>
+  <path class="arrow rust-stroke" d="M948 279 L970 292 L948 305"></path>
+    
+  <g class="thin">
+    <rect x="120" y="430" width="220" height="76" rx="14"></rect>
+    <text class="box-title" x="142" y="466">陪聊</text>
+    <text class="box-desc" x="142" y="496">随机回答</text>
+  </g>
+    
+  <g class="hero">
+    <rect x="440" y="430" width="220" height="76" rx="14"></rect>
+    <text class="box-title" x="462" y="466">系统</text>
+    <text class="box-desc" x="462" y="496">稳定执行</text>
+  </g>
+    
+  <g class="thin">
+    <rect x="760" y="430" width="220" height="76" rx="14"></rect>
+    <text class="box-title" x="782" y="466">掌控</text>
+    <text class="box-desc" x="782" y="496">数字未来</text>
+  </g>
+  </svg></div>
+  </div>
+</section>
+</main>
+<div id="nav" class="nav"></div><div class="hint">← → 翻页</div>
+<script>
+const deck=document.getElementById('deck');
+const slides=[...document.querySelectorAll('.slide')];
+const nav=document.getElementById('nav');
+let idx=0;
+slides.forEach((_,i)=>{const b=document.createElement('button');b.onclick=()=>go(i);nav.appendChild(b)});
+function go(n){idx=Math.max(0,Math.min(slides.length-1,n));deck.style.transform='translateX('+(-idx*100)+'vw)';[...nav.children].forEach((b,i)=>b.classList.toggle('active',i===idx))}
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key))go(idx+1);if(['ArrowLeft','PageUp'].includes(e.key))go(idx-1);if(e.key==='Home')go(0);if(e.key==='End')go(slides.length-1)});
+go(Number(new URLSearchParams(location.search).get('slide')||1)-1);
+</script>
+</body></html>

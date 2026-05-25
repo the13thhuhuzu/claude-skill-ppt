@@ -1,0 +1,24 @@
+# macOS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+
+# Local environment and dependency caches
+node_modules/
+.env
+.env.*
+.cache/
+.tmp/
+
+# Browser QA screenshots generated during visual checks
+**/preview-*.png
+
+# Intermediate PDF page raster exports; current HTML decks do not reference them
+ppt/images/page-*.png
+
+# Logs and packaged archives
+*.log
+*.zip
+*.tar
+*.tgz

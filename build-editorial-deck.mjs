@@ -1,0 +1,272 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const root = "/Users/huhuzu/Documents/codex项目/PDF合并-html演示";
+const outDir = path.join(root, "ppt-editorial");
+fs.mkdirSync(outDir, { recursive: true });
+
+const total = 30;
+
+const meta = (n, left, right = "Agent Skill · Editorial Field Notes") => `
+  <div class="meta-row"><span class="left"><span class="dot"></span><span class="num">${String(n).padStart(2, "0")} · ${left}</span></span><span>${right}</span></div>
+  <span class="pagenum">${String(n).padStart(2, "0")} / ${total}</span>`;
+
+const foot = `<hr class="footrule">`;
+
+const kv = (items) => `<dl class="kv">${items.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>`;
+const toc = (items) => `<ol class="toc">${items.map(([n, t, pg]) => `<li><span class="n">${n}</span><span class="t">${t}</span><span class="pg">p. ${pg}</span></li>`).join("")}</ol>`;
+const thesis = (items) => `<div class="manifest-list">${items.map(([n, title, text, tag]) => `<div class="manifest-item"><div class="n">${n}</div><div><h4>${title}</h4><p>${text}</p></div><div class="tag">${tag}</div></div>`).join("")}</div>`;
+const compare = (leftTitle, leftItems, rightTitle, rightItems) => `<div class="compare">
+  <div class="col against"><h5>${leftTitle}</h5>${leftItems.map(x => `<p>${x}</p>`).join("")}</div>
+  <div class="col for"><h5>${rightTitle}</h5>${rightItems.map(x => `<p>${x}</p>`).join("")}</div>
+</div>`;
+const bars = (rows) => `<div class="bars">${rows.map(([label, value, width, accent = false]) => `<span class="bar-label">${label}</span><div class="bar ${accent ? "accent" : ""}" style="--w:${width}%"></div><span class="bar-value">${value}</span>`).join("")}</div>`;
+const steps = (items) => `<div class="steps">${items.map(([n, title, text]) => `<div class="step"><span>${n}</span><h4>${title}</h4><p>${text}</p></div>`).join("")}</div>`;
+const matrix = (items) => `<div class="matrix">${items.map(([k, v, tone = ""]) => `<div class="${tone}"><span>${k}</span><p>${v}</p></div>`).join("")}</div>`;
+const plate = (title, sub, body) => `<div class="plate"><span class="plate-kicker">${sub}</span><h3>${title}</h3>${body}</div>`;
+
+const slides = [
+`<section class="slide cover-slide">
+  ${meta(1, "cover", "Work OS · 2026")}
+  <span class="stamp">field note 01 · agent skill</span>
+  <h1 class="cover"><span class="line">告别“陪聊”</span><span class="line"><em>拥有你的</em></span><span class="line">专属数字员工。</span></h1>
+  <h3 class="sub">职场人的 Agent Skill 启蒙课</h3>
+  <p class="lede">这不是一份工具清单，而是一份工作方式转译：把 AI 从随机回答的聊天框，变成有资料、有流程、有验收标准的工作系统。</p>
+  <span class="signature">HTML PPT · taste editorial</span>
+</section>`,
+`<section class="slide toc-slide">
+  ${meta(2, "thesis & agenda")}
+  <div class="columns">
+    <div>
+      <h2 class="title"><span class="line">你的 AI</span><span class="line">不是不聪明，</span><span class="line"><em>只是没有被安排进工作。</em></span></h2>
+      <p class="lede">原文档的主线保留为 30 页，但改成编辑部专题结构：误区、系统、组件、资源配置、行动。</p>
+    </div>
+    ${toc([["01", "误区：陪聊不是生产力", "03"], ["02", "系统：数字员工需要岗位", "05"], ["03", "组件：资料、脚本与手册", "10"], ["04", "配置：MCP 是手，Skill 是脑", "19"], ["05", "行动：今晚就能开始", "25"]])}
+  </div>${foot}
+</section>`,
+`<section class="slide quote-slide">
+  ${meta(3, "false fluency")}
+  <blockquote><span class="line">很多人还在研究</span><span class="line">怎么跟 AI 聊天，</span><span class="line"><em>仿佛背几句提示词</em>就能掌控一切。</span></blockquote>
+  <cite>— 原文第一页后的核心误区：把表达流畅误认为工作完成</cite>${foot}
+</section>`,
+`<section class="slide compare-slide">
+  ${meta(4, "mode shift")}
+  <h2 class="title"><span class="line">从“会说”</span><span class="line">到<em>“会做”</em>。</span></h2>
+  ${compare("Doesn't", ["临时问一句，临时追问一句。", "每次重讲背景，输出靠运气。", "聊天越长，责任越模糊。"], "Does", ["目标、资料、工具和标准被固定下来。", "AI 先进入现场，再开始执行。", "结果能被复用、校验和迭代。"])}
+  ${foot}
+</section>`,
+`<section class="slide bento-slide">
+  ${meta(5, "digital employee")}
+  <h2 class="title"><span class="line">专属数字员工的</span><span class="line"><em>岗位说明书</em>。</span></h2>
+  <div class="bento">
+    <div class="cell span-3 row-2"><span class="cell-meta">role</span><div class="stat">01</div><h4>它是谁</h4><p>不是“万能 AI”，而是一个被安排到具体岗位上的执行者。</p></div>
+    <div class="cell span-3"><span class="cell-meta">context</span><h4>它看见什么</h4><p>过往案例、内部材料、客户文件、语气标准和禁区。</p></div>
+    <div class="cell span-2"><span class="cell-meta">tool</span><h4>它能用什么</h4><p>脚本、接口、本地文件和网页。</p></div>
+    <div class="cell span-2"><span class="cell-meta">output</span><h4>它交付什么</h4><p>固定格式、明确验收口径。</p></div>
+    <div class="cell span-2"><span class="cell-meta">memory</span><h4>它如何复用</h4><p>经验沉淀成 Skill，而不是留在聊天记录里。</p></div>
+  </div>${foot}
+</section>`,
+`<section class="slide manifesto">
+  ${meta(6, "job design")}
+  <h2 class="title"><span class="line">你不是在问 AI，</span><span class="line"><em>你是在设计岗位。</em></span></h2>
+  ${thesis([["01", "岗位比咒语重要。", "一句万能提示词像没有岗位说明书；你需要定义职责、边界和交付。", "role"], ["02", "现场比聊天重要。", "AI 要先看到材料、案例、历史和上下文，再开始输出。", "context"], ["03", "验收比语气重要。", "稳定的结果来自明确标准，而不是“写得高级一点”。", "qa"]])}${foot}
+</section>`,
+`<section class="slide table-slide">
+  ${meta(7, "skill stack")}
+  <h2 class="title"><span class="line">Agent Skill</span><span class="line">是<em>经验资产</em>。</span></h2>
+  <div class="data six">
+    <div class="head">层</div><div class="head">名称</div><div class="head">回答的问题</div><div class="head">沉淀物</div>
+    <div>01</div><div>目标</div><div>这次到底要达成什么？</div><div>任务定义</div>
+    <div>02</div><div>资料</div><div>它应该先看什么？</div><div>References</div>
+    <div>03</div><div>步骤</div><div>怎么从输入走到交付？</div><div>Runbook</div>
+    <div>04</div><div>工具</div><div>它能调用哪些能力？</div><div>Scripts / MCP</div>
+    <div>05</div><div>标准</div><div>怎么判断好不好？</div><div>Checklist</div>
+  </div>${foot}
+</section>`,
+`<section class="slide quote-slide">
+  ${meta(8, "reusable memory")}
+  <blockquote><span class="line">真正值钱的</span><span class="line">不是一句 Prompt，</span><span class="line"><em>而是你把经验变成了系统。</em></span></blockquote>
+  <cite>— 可复用，才是从个人灵感走向组织能力的起点</cite>${foot}
+</section>`,
+`<section class="slide chart-slide">
+  ${meta(9, "input weight")}
+  <h2 class="title"><span class="line">三个输入</span><span class="line">决定输出的<em>稳定性</em>。</span></h2>
+  ${bars([["Goal", "目标清楚", 74], ["Material", "资料完整", 88, true], ["Tool", "动作可执行", 64], ["Standard", "验收明确", 79]])}
+  <p class="lede small">这页不讲模型参数，只讲你能控制的工作条件：给它什么，它就基于什么做。</p>${foot}
+</section>`,
+`<section class="slide split-slide">
+  ${meta(10, "references / scripts")}
+  <h2 class="title"><span class="line">带资进组的</span><span class="line"><em>超强外援</em>。</span></h2>
+  <div class="split-plate">
+    ${plate("References", "左栏 · 参考书", "<p>遇到不懂的术语和业务背景，AI 不靠编，而是按需查内部手册、工程文档、历史案例。</p>")}
+    ${plate("Scripts", "右栏 · 执行手脚", "<p>不仅能动嘴，还能跑脚本、处理文件、生成 PDF、分析数据，突破聊天框的物理限制。</p>")}
+  </div>${foot}
+</section>`,
+`<section class="slide quote-slide">
+  ${meta(11, "system prompt")}
+  <blockquote><span class="line">System Prompt</span><span class="line">不是开场白，</span><span class="line"><em>是第一份岗位说明书。</em></span></blockquote>
+  <cite>— 把角色、步骤、边界和验收写清楚</cite>${foot}
+</section>`,
+`<section class="slide manifesto">
+  ${meta(12, "prompt blueprint")}
+  <h2 class="title"><span class="line">一份蓝图，</span><span class="line">至少写清<em>四件事</em>。</span></h2>
+  ${thesis([["01", "角色。", "你是谁，站在哪个专业视角判断。", "role"], ["02", "边界。", "什么不能做，什么必须先确认。", "limits"], ["03", "步骤。", "先读、再拆、再执行、最后自检。", "process"], ["04", "验收。", "输出格式、质量标准和失败处理。", "quality"]])}${foot}
+</section>`,
+`<section class="slide compare-slide">
+  ${meta(13, "question vs system")}
+  <h2 class="title"><span class="line">别问</span><span class="line">“你会写周报吗？”</span></h2>
+  ${compare("Question", ["你会写周报吗？", "帮我总结一下。", "写得专业一点。"], "System", ["你是有 5 年经验的运营专家。", "按 STAR 法则输出。", "先列风险，再给行动建议。"])}
+  ${foot}
+</section>`,
+`<section class="slide bento-slide">
+  ${meta(14, "document context")}
+  <h2 class="title"><span class="line">资料不是附件，</span><span class="line"><em>是工作现场</em>。</span></h2>
+  <div class="bento compact">
+    <div class="cell span-2"><span class="cell-meta">input</span><h4>长篇 PDF</h4><p>会议材料、行业报告、客户需求。</p></div>
+    <div class="cell span-2"><span class="cell-meta">parse</span><h4>结构提取</h4><p>三要点、风险、证据、未决问题。</p></div>
+    <div class="cell span-2"><span class="cell-meta">action</span><h4>下一步</h4><p>转为待办、邮件、方案或检查表。</p></div>
+    <div class="cell span-6"><span class="cell-meta">principle</span><div class="stat">Context first</div><p>先把“这件事”的语境放进来，再要求 AI 输出判断。</p></div>
+  </div>${foot}
+</section>`,
+`<section class="slide pipeline-slide">
+  ${meta(15, "runbook")}
+  <h2 class="title"><span class="line">把“怎么做”</span><span class="line">拆成<em>可推进步骤</em>。</span></h2>
+  ${steps([["01", "读目标", "确认本次交付物。"], ["02", "查资料", "先看上下文。"], ["03", "跑工具", "调用脚本或文件能力。"], ["04", "产出", "按模板交付。"], ["05", "自检", "对照标准修正。"]])}${foot}
+</section>`,
+`<section class="slide chart-slide">
+  ${meta(16, "workflow")}
+  <h2 class="title"><span class="line">执行链路，</span><span class="line">而不是对话记录。</span></h2>
+  ${bars([["Input", "输入目标", 24], ["Understand", "理解上下文", 48], ["Execute", "调用工具", 72, true], ["Verify", "校验结果", 86], ["Deliver", "交付成品", 100]])}
+  <p class="lede small">AI 的价值不在于“说得像懂了”，而在于它能沿着流程把结果交出来。</p>${foot}
+</section>`,
+`<section class="slide quote-slide">
+  ${meta(17, "local action")}
+  <blockquote><span class="line">不只是动嘴，</span><span class="line">还要真刀真枪地干活。</span></blockquote>
+  <cite>— 脚本、文件、网页和本地软件，把 AI 推出聊天框</cite>${foot}
+</section>`,
+`<section class="slide table-slide">
+  ${meta(18, "tool matrix")}
+  <h2 class="title"><span class="line">工具矩阵</span><span class="line">决定 AI 能走多远。</span></h2>
+  <div class="data six">
+    <div class="head">能力</div><div class="head">对象</div><div class="head">结果</div><div class="head">价值</div>
+    <div>PDF</div><div>长文档</div><div>提取结构</div><div>减少人工阅读</div>
+    <div>Python</div><div>数据文件</div><div>分析 / 图表</div><div>从建议到计算</div>
+    <div>浏览器</div><div>网页资料</div><div>查询 / 比较</div><div>补足事实</div>
+    <div>本地软件</div><div>真实工作区</div><div>操作 / 生成</div><div>进入流程</div>
+  </div>${foot}
+</section>`,
+`<section class="slide cover-slide section-break">
+  ${meta(19, "metaphor", "Act IV · resources")}
+  <span class="stamp">resource configuration</span>
+  <h1 class="cover"><span class="line">刀具</span><span class="line">与<em>菜谱</em>。</span></h1>
+  <p class="lede">决定 AI 聪不聪明的，不只是模型，而是你如何配置资源。</p>
+</section>`,
+`<section class="slide compare-slide">
+  ${meta(20, "mcp vs skill")}
+  <h2 class="title"><span class="line">MCP 是手，</span><span class="line"><em>Agent Skill 是脑</em>。</span></h2>
+  ${compare("MCP", ["读写文件。", "联网搜索。", "调用接口。", "操作软件。"], "Agent Skill", ["判断遇到什么肉。", "决定用哪把刀。", "规定切多厚。", "检查是否能上桌。"])}
+  ${foot}
+</section>`,
+`<section class="slide bento-slide">
+  ${meta(21, "resource allocation")}
+  <h2 class="title"><span class="line">聪明程度</span><span class="line">取决于<em>资源配置</em>。</span></h2>
+  <div class="bento compact">
+    <div class="cell span-3"><span class="cell-meta">facts</span><div class="stat">资料</div><p>没有事实，AI 只会补想象。</p></div>
+    <div class="cell span-3"><span class="cell-meta">actions</span><div class="stat">工具</div><p>没有动作，AI 只能停在建议。</p></div>
+    <div class="cell span-3"><span class="cell-meta">order</span><div class="stat">流程</div><p>没有顺序，输出无法稳定复现。</p></div>
+    <div class="cell span-3"><span class="cell-meta">check</span><div class="stat">标准</div><p>没有验收，结果无法放心交付。</p></div>
+  </div>${foot}
+</section>`,
+`<section class="slide compare-slide">
+  ${meta(22, "before after")}
+  <h2 class="title"><span class="line">从人追着 AI 解释，</span><span class="line">到<em>流程托住人</em>。</span></h2>
+  ${compare("Before", ["每次重新交代背景。", "每次重新规定格式。", "每次靠人工兜底。"], "After", ["Skill 记住上下文。", "模板固定交付格式。", "Checklist 自动拉回标准。"])}
+  ${foot}
+</section>`,
+`<section class="slide split-slide">
+  ${meta(23, "division of labor")}
+  <h2 class="title"><span class="line">人定方向，</span><span class="line"><em>Agent 跑流程</em>。</span></h2>
+  <div class="split-plate">
+    ${plate("Human", "判断 / 审美 / 责任", "<p>决定目标、取舍、风险和最终签字。人负责方向和标准。</p>")}
+    ${plate("Agent", "检索 / 整理 / 执行", "<p>处理重复劳动，沿着流程调用资料和工具，交付可检查结果。</p>")}
+  </div>${foot}
+</section>`,
+`<section class="slide quote-slide">
+  ${meta(24, "ownership")}
+  <blockquote><span class="line">把经验写出来，</span><span class="line"><em>你就拥有了</em></span><span class="line">一个可复制的自己。</span></blockquote>
+  <cite>— 这不是替代你，而是外化你最稳定的工作方式</cite>${foot}
+</section>`,
+`<section class="slide table-slide">
+  ${meta(25, "command center")}
+  <h2 class="title"><span class="line">给自己搭一个</span><span class="line">Agent 工作台。</span></h2>
+  <div class="data six">
+    <div class="head">模块</div><div class="head">放什么</div><div class="head">解决什么</div><div class="head">第一版</div>
+    <div>任务池</div><div>重复工作</div><div>知道先做什么</div><div>周报 / 纪要</div>
+    <div>资料库</div><div>旧稿与案例</div><div>减少重讲背景</div><div>3 份代表文件</div>
+    <div>Skill 库</div><div>流程手册</div><div>复用经验</div><div>1 个系统提示词</div>
+    <div>验收表</div><div>质量标准</div><div>避免漂移</div><div>5 条检查项</div>
+  </div>${foot}
+</section>`,
+`<section class="slide manifesto">
+  ${meta(26, "first skill")}
+  <h2 class="title"><span class="line">第一件事：</span><span class="line">写下你的</span><span class="line"><em>第一个 System Prompt</em>。</span></h2>
+  ${thesis([["01", "写角色。", "你是谁，站在哪个专业位置。", "role"], ["02", "写步骤。", "先做什么，后做什么，失败如何处理。", "process"], ["03", "写标准。", "什么算合格，什么必须退回。", "check"]])}${foot}
+</section>`,
+`<section class="slide manifesto">
+  ${meta(27, "feed one file")}
+  <h2 class="title"><span class="line">第二件事：</span><span class="line">喂一份<em>复杂文件</em>。</span></h2>
+  ${thesis([["01", "不要问泛泛建议。", "把明天要看的长篇 PDF 交给它。", "input"], ["02", "要求它先拆结构。", "核心三点、风险、证据、下一步问题。", "parse"], ["03", "把输出变成行动。", "转成待办、邮件、方案或检查表。", "action"]])}${foot}
+</section>`,
+`<section class="slide chart-slide">
+  ${meta(28, "review loop")}
+  <h2 class="title"><span class="line">让 AI 先做，</span><span class="line">再按你的标准<em>自检</em>。</span></h2>
+  ${bars([["Draft", "草稿", 36], ["Check", "对照规则", 72, true], ["Revise", "修订", 88], ["Update Skill", "沉淀回系统", 100]])}
+  <p class="lede small">好用的 Skill 不是一次写完的，它来自每次使用后的修订。</p>${foot}
+</section>`,
+`<section class="slide bento-slide">
+  ${meta(29, "tonight")}
+  <h2 class="title"><span class="line">今晚就能做的</span><span class="line"><em>两件事</em>。</span></h2>
+  <div class="bento compact">
+    <div class="cell span-3 row-2"><span class="cell-meta">01</span><div class="stat">Prompt</div><h4>写下你的第一个岗位说明书。</h4><p>别再问“会不会”，直接规定角色、步骤、标准。</p></div>
+    <div class="cell span-3 row-2"><span class="cell-meta">02</span><div class="stat">File</div><h4>给 AI 一份复杂文件。</h4><p>让它提炼结构、风险和下一步问题。</p></div>
+  </div>${foot}
+</section>`,
+`<section class="slide closing-slide">
+  ${meta(30, "closing", "the end")}
+  <h2><span class="line"><b>告别陪聊。</b></span><span class="line"><em>去搭建属于你的</em></span><span class="line"><em>执行系统。</em></span></h2>
+  <p class="lede">掌控数字未来的方式，不是等更聪明的模型，而是把你的经验、资料、工具和标准组织起来。</p>
+  <div class="row"><button class="ghost-cta solid">Start with one Skill</button><button class="ghost-cta">Feed one file</button></div>${foot}
+</section>`,
+];
+
+const html = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>告别“陪聊” · Editorial Minimalism</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBFBFA;--paper-2:#F7F6F3;--ink:#1A1A19;--ink-soft:#555452;--muted:#828079;--hairline:#E5E3DE;--hairline-soft:#EFEDE8;--accent:#346538;--accent-bg:#EDF3EC;--accent-2:#9F2F2D;--accent-2-bg:#FDEBEC;--display:'Instrument Serif','Noto Serif SC','Newsreader',Georgia,serif;--sans:'Inter Tight','Noto Sans SC','Switzer','SF Pro Display',system-ui,sans-serif;--mono:'JetBrains Mono','Geist Mono',ui-monospace,monospace}
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}.deck{position:relative;width:100vw}.slide{position:relative;width:100vw;height:100vh;min-height:720px;padding:72px 96px;display:flex;flex-direction:column;overflow:hidden;page-break-after:always}.slide+.slide{border-top:1px solid var(--hairline)}.meta-row{position:absolute;top:32px;left:96px;right:96px;display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}.meta-row .left{display:inline-flex;align-items:center;gap:10px}.meta-row .dot{width:6px;height:6px;border-radius:999px;background:var(--accent)}.meta-row .num{color:var(--ink)}.pagenum{position:absolute;bottom:32px;right:96px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}.footrule{position:absolute;bottom:28px;left:96px;right:96px;border:0;border-top:1px solid var(--hairline)}.signature{position:absolute;bottom:32px;left:96px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+h1.cover{font-family:var(--display);font-size:clamp(72px,8.2vw,122px);font-weight:400;line-height:.98;letter-spacing:-.018em;margin:0;max-width:18ch}h1.cover em,h2.title em,.closing-slide h2 em{font-style:italic;color:var(--ink-soft)}h2.title{font-family:var(--display);font-size:clamp(54px,5.9vw,88px);font-weight:400;line-height:1.04;letter-spacing:-.018em;margin:0;max-width:17ch}.line{display:block;text-wrap:balance}.quote-slide blockquote .line,.closing-slide h2 .line{display:block}h3.sub{font-family:var(--display);font-style:italic;font-weight:400;font-size:32px;line-height:1.15;letter-spacing:-.02em;color:var(--ink-soft);margin:16px 0 0}.lede{font-size:21px;line-height:1.5;color:var(--ink-soft);max-width:56ch;margin:0}.lede.small{font-size:15px;margin-top:48px}.cover-slide{justify-content:center}.cover-slide .lede{margin-top:28px;max-width:50ch}.stamp{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);background:var(--accent-bg);padding:4px 10px;border-radius:999px;margin-bottom:28px}.section-break{background:var(--paper-2)}
+.toc-slide{justify-content:center}.columns{display:grid;grid-template-columns:1fr 1fr;gap:96px;align-items:start;padding-top:48px}.toc{list-style:none;padding:0;margin:0;border-top:1px solid var(--hairline)}.toc li{display:grid;grid-template-columns:4ch 1fr 4ch;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid var(--hairline);font-size:17px}.toc .n,.toc .pg{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--muted)}.toc .pg{text-align:right}.toc .t{font-family:var(--display);font-size:22px;letter-spacing:-.012em;line-height:1.2}
+.manifest-list{margin-top:48px;display:grid}.manifest-item{display:grid;grid-template-columns:6ch 1fr 14ch;gap:32px;padding:22px 0;border-top:1px solid var(--hairline);align-items:baseline}.manifest-item:last-child{border-bottom:1px solid var(--hairline)}.manifest-item .n{font-family:var(--display);font-size:44px;line-height:.95;letter-spacing:-.03em}.manifest-item h4{font-family:var(--display);font-size:26px;letter-spacing:-.015em;line-height:1.2;margin:0 0 6px;font-weight:400}.manifest-item p{margin:0;font-size:14.5px;color:var(--ink-soft);max-width:58ch}.manifest-item .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:right}
+.compare{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--hairline)}.compare .col{padding:28px 0}.compare .col+.col{border-left:1px solid var(--hairline);padding-left:32px}.compare h5{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}.compare .against h5{color:var(--accent-2)}.compare .for h5{color:var(--accent)}.compare p{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.3;letter-spacing:-.01em;margin:0 0 18px;padding-bottom:18px;border-bottom:1px solid var(--hairline);max-width:28ch}.compare p:last-child{border-bottom:none}.compare .against p{color:var(--ink-soft)}
+.bento{margin-top:56px;display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(150px,auto);border:1px solid var(--hairline);background:var(--hairline);gap:1px}.bento.compact{grid-auto-rows:minmax(175px,auto)}.cell{background:var(--paper);padding:28px 32px}.span-2{grid-column:span 2}.span-3{grid-column:span 3}.span-6{grid-column:span 6}.row-2{grid-row:span 2}.cell-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:block}.cell .stat{font-family:var(--display);font-size:64px;line-height:1;letter-spacing:-.03em;font-weight:400}.cell h4{font-family:var(--display);font-size:22px;line-height:1.2;letter-spacing:-.015em;font-weight:400;margin:12px 0 8px}.cell p{font-size:13.5px;color:var(--ink-soft);margin:0;max-width:34ch;line-height:1.55}
+.quote-slide{justify-content:center;text-align:left}.quote-slide blockquote{margin:0;padding:38px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);font-family:var(--display);font-size:clamp(42px,4.7vw,70px);font-weight:400;letter-spacing:-.02em;line-height:1.12;color:var(--ink);max-width:25ch}.quote-slide cite{display:block;margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-style:normal}
+.data{margin-top:56px;display:grid;grid-template-columns:4ch 1.1fr 1.8fr 1.2fr;gap:1px;background:var(--hairline);font-size:14px}.data>div{background:var(--paper);padding:14px 18px}.data .head{background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}.data.six{grid-template-columns:.8fr 1.2fr 2fr 1.6fr}
+.bars{margin-top:56px;display:grid;grid-template-columns:13ch 1fr 12ch;gap:18px 24px;align-items:center;font-size:14px}.bar-label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.bar{height:20px;background:var(--paper-2);position:relative;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}.bar:after{content:'';position:absolute;left:0;top:0;bottom:0;width:var(--w,0%);background:var(--ink-soft)}.bar.accent:after{background:var(--accent)}.bar-value{font-family:var(--mono);font-size:13px;text-align:right;letter-spacing:.02em}
+.split-plate{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hairline);border:1px solid var(--hairline)}.plate{background:var(--paper);padding:44px 46px;min-height:330px}.plate-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}.plate h3{font-family:var(--display);font-weight:400;font-size:54px;letter-spacing:-.025em;line-height:1;margin:28px 0 26px}.plate p{font-size:18px;line-height:1.6;color:var(--ink-soft);max-width:35ch}
+.steps{margin-top:64px;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline)}.step{background:var(--paper);padding:32px 26px;min-height:260px}.step span{font-family:var(--display);font-size:44px;line-height:1;letter-spacing:-.03em}.step h4{font-family:var(--display);font-weight:400;font-size:26px;margin:44px 0 12px}.step p{font-size:14px;color:var(--ink-soft);margin:0}.kv{margin:56px 0 0;display:grid;grid-template-columns:14ch 1fr;gap:12px 18px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;line-height:1.6}.kv dt{color:var(--muted);text-transform:uppercase;letter-spacing:.16em;font-size:11px}.kv dd{margin:0;color:var(--ink)}
+.closing-slide{justify-content:center;text-align:left}.closing-slide h2{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(64px,8vw,120px);line-height:1;letter-spacing:-.025em;margin:0;max-width:18ch}.closing-slide h2 b{font-weight:400;font-style:normal;color:var(--ink)}.closing-slide .lede{margin-top:32px;max-width:64ch}.row{display:flex;gap:14px;margin-top:38px;align-items:center}.ghost-cta{font-family:var(--sans);font-weight:500;font-size:14px;padding:12px 22px;border:1px solid var(--hairline);border-radius:8px;background:transparent;color:var(--ink)}.ghost-cta.solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+@media print{.slide{height:auto;min-height:100vh;page-break-after:always}}
+</style>
+</head>
+<body><div class="deck">
+${slides.join("\n\n")}
+</div></body></html>`;
+
+fs.writeFileSync(path.join(outDir, "index.html"), html);

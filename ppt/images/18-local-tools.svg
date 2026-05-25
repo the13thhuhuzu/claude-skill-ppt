@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <rect x="170" y="145" width="780" height="560" rx="24" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><path d="M170 330 H950 M170 515 H950 M430 145 V705 M690 145 V705" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M270 230 H335 M270 600 H350 M520 230 H590 M520 600 H610 M780 230 H850 M780 600 H870" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="560" cy="422" r="45" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/>
+  </g>
+  <g class="argument-layer"><text x="216" y="296" font-family="Noto Sans SC, sans-serif" font-size="18" font-weight="700" fill="#0a1f3d">文档</text><text x="476" y="296" font-family="Noto Sans SC, sans-serif" font-size="18" font-weight="700" fill="#0a1f3d">数据</text><text x="736" y="296" font-family="Noto Sans SC, sans-serif" font-size="18" font-weight="700" fill="#0a1f3d">脚本</text>
+      <text x="216" y="480" font-family="Noto Sans SC, sans-serif" font-size="18" font-weight="700" fill="#0a1f3d">网页</text><text x="476" y="480" font-family="Noto Sans SC, sans-serif" font-size="18" font-weight="700" fill="#0a1f3d">软件</text><text x="736" y="480" font-family="Noto Sans SC, sans-serif" font-size="18" font-weight="700" fill="#0a1f3d">输出</text>
+      <text x="214" y="665" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" letter-spacing="2" fill="#6f8fae">工具越贴近任务，执行越稳定</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">本地工具矩阵</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">PDF / 数据 / 脚本 / 软件操作</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

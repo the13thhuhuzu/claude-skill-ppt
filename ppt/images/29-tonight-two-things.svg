@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <rect x="170" y="210" width="300" height="300" rx="30" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><rect x="650" y="210" width="300" height="300" rx="30" fill="#f8fafc" stroke="#0a1f3d" stroke-width="3"/><path d="M245 360 L310 425 L405 285 M725 360 L790 425 L885 285" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M185 590 H445 M665 590 H930" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><text x="210" y="565" font-family="Noto Sans SC, sans-serif" font-size="22" font-weight="700" fill="#0a1f3d">1. 写 System Prompt</text>
+      <text x="690" y="565" font-family="Noto Sans SC, sans-serif" font-size="22" font-weight="700" fill="#0a1f3d">2. 喂复杂文件</text>
+      <text x="250" y="635" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" letter-spacing="2" fill="#6f8fae">今晚开始，让流程先跑起来</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">今晚两件事</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">写 Prompt，喂文件</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <rect x="150" y="155" width="820" height="500" rx="30" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><rect x="220" y="225" width="300" height="360" rx="20" fill="#f8fafc" stroke="#0a1f3d" stroke-width="3"/><rect x="575" y="225" width="320" height="140" rx="18" fill="#f8fafc" stroke="#0a1f3d" stroke-width="3"/><rect x="575" y="410" width="320" height="175" rx="18" fill="#f8fafc" stroke="#0a1f3d" stroke-width="3"/><path d="M270 305 H460 M270 360 H430 M270 415 H470 M625 285 H835 M625 475 H835 M625 530 H780" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><rect x="206" y="610" width="185" height="68" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="228" y="646" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">任务池</text>
+      <text x="228" y="678" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">待办</text>
+      <rect x="420" y="610" width="185" height="68" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="442" y="646" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">Skill 库</text>
+      <text x="442" y="678" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">复用</text>
+      <rect x="634" y="610" width="185" height="68" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="656" y="646" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">执行器</text>
+      <text x="656" y="678" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">跑流程</text>
+      <rect x="848" y="610" width="170" height="68" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="870" y="646" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">交付</text>
+      <text x="870" y="678" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">验收</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">Agent Command Center</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">你的职场指挥台</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>

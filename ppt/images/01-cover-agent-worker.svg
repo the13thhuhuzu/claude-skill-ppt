@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1120 700">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#b8c4cf" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <filter id="grain"><feTurbulence baseFrequency=".8" numOctaves="2" stitchTiles="stitch" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="1120" height="700" fill="#f1f3f5"/>
+  <rect width="1120" height="700" fill="url(#grid)" opacity=".6"/>
+  <rect width="1120" height="700" filter="url(#grain)" opacity=".35"/>
+  <g opacity=".18" transform="translate(55 36) scale(.9)">
+    <circle cx="330" cy="290" r="70" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><circle cx="610" cy="210" r="54" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/><circle cx="735" cy="420" r="62" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><circle cx="485" cy="520" r="48" fill="#b9795d" stroke="#0a1f3d" stroke-width="3"/><path d="M398 274 L557 224 M646 258 L710 368 M690 438 L530 505 M456 492 L365 348" stroke="#0a1f3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="220" y="620" width="650" height="92" rx="18" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="3"/><path d="M285 666 H805 M310 692 H640" stroke="#6f8fae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <g class="argument-layer"><text x="92" y="610" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="14" letter-spacing="2" fill="#6f8fae">OPERATING MODEL</text>
+      <rect x="90" y="640" width="220" height="78" rx="16" fill="#f8fafc" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="112" y="676" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">聊天气泡</text>
+      <text x="112" y="708" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">零散问答</text>
+      <path d="M326 680 H462" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M462 666 L486 680 L462 694" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="500" y="640" width="220" height="78" rx="16" fill="#d9e1e8" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="522" y="676" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">工作台</text>
+      <text x="522" y="708" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">资料 + 工具</text>
+      <path d="M736 680 H872" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round"/><path d="M872 666 L896 680 L872 694" fill="none" stroke="#0a1f3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="910" y="640" width="160" height="78" rx="16" fill="#b9795d" stroke="#0a1f3d" stroke-width="2.5"/>
+      <text x="932" y="676" font-family="Noto Sans SC, sans-serif" font-size="19" font-weight="700" fill="#0a1f3d">交付</text>
+      <text x="932" y="708" font-family="Noto Sans SC, sans-serif" font-size="15" font-weight="400" fill="#415a72">可复用</text></g>
+  <text x="70" y="92" font-family="Noto Serif SC, Songti SC, serif" font-size="48" font-weight="700" fill="#0a1f3d">数字员工</text>
+  <text x="72" y="142" font-family="Noto Sans SC, sans-serif" font-size="24" fill="#415a72">从聊天气泡到可执行工作台</text>
+  <path d="M70 168H405" stroke="#0a1f3d" stroke-width="2" opacity=".45"/>
+</svg>
